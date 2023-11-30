@@ -41,7 +41,7 @@ export const Footer: FC = () => {
               Slipyme çeşitli sektörlerde kaliteli bir hizmet verebilmek
               amacıyla kurulmuştur. Amacımız hizmet ettiğimiz sektörlerde
               faaliyetler gösterip bu sektörleri birbirleri ile harmanlamaktır.
-              Slipyme, şuanda yazılım, tasarım ve oyun sektöründe faaliyet
+              Slipyme,and şuanda yazılım, tasarım ve oyun sektöründe faaliyet
               göstermektedir.
             </p>
           </div>
