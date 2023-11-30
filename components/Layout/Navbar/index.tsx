@@ -117,7 +117,7 @@ export const Navbar: FC = () => {
    
 
      <header id="site-header" className="header header-2">
-      <div className="header-top">
+      <div className="bg-yellow-400 p-3">
         <div className="container-fluid">
           <div className="row">
             <div className="col-md-2 justify-content-between">
