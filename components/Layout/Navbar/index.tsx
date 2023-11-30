@@ -6,7 +6,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { MdOutgoingMail } from "react-icons/md";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { CustomImage } from "@components/Utils/CustomImage";
-import classNames from "classnames";
 import icon from "@assets/icon.svg";
 import { Button } from "@components/Utils/Button";
 import Image from "next/dist/client/image";
@@ -84,23 +83,7 @@ export const Navbar: FC = () => {
     setHash(!hash);
   };
 
-  const slide=[
-    {
-      url:" <Image src='/1.png' width={100} height={100}></Image>"
-    },
-    {
-      url:"/2.png"
-    },
-    {
-      url:"/3.png"
-    },
-    {
-      url:"/4.png"
-    },
-    {
-      url:"/5.png"
-    },
-  ]
+  
 
   let hoverlist=["list1","list2","list3","list4","list5"]
   const [currentlist,setCurrentlist]=useState()
