@@ -10,13 +10,28 @@ import classNames from "classnames";
 import icon from "@assets/icon.svg";
 import { Button } from "@components/Utils/Button";
 import Image from "next/dist/client/image";
-import Swiper from "swiper";
+import Slider from 'react-slick'
+
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+
 
 
 export const Navbar: FC = () => {
   const router = useRouter();
   const [top, setTop] = useState(false);
   const [hash, setHash] = useState(false);
+
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000, // Adjust the speed (in milliseconds) as needed
+  };
 
   const PAGES = [
     {
@@ -49,14 +64,6 @@ export const Navbar: FC = () => {
     },
   ];
 
-  const imgs=[
-    {url:"1.png"},
-    {url:"2.png"},
-    {url:"3.png"},
-    {url:"4.png"},
-    {url:"5.png"}
-  ]
-
 
   useEffect(() => {
     window.onscroll = function () {
@@ -77,16 +84,37 @@ export const Navbar: FC = () => {
     setHash(!hash);
   };
 
-  return (
-    <>
-     <div>
+  const slide=[
+    {
+      url:" <Image src='/1.png' width={100} height={100}></Image>"
+    },
+    {
+      url:"/2.png"
+    },
+    {
+      url:"/3.png"
+    },
+    {
+      url:"/4.png"
+    },
+    {
+      url:"/5.png"
+    },
+  ]
 
-       
-
-
-     </div>
+  let hoverlist=["list1","list2","list3","list4","list5"]
+  const [currentlist,setCurrentlist]=useState()
+  let mouseHover=()=>{
+       alert("hover link")
+      
+  }
   
 
+  
+
+  return (
+    <>
+   
 
      <header id="site-header" className="header header-2">
       <div className="header-top">
@@ -119,8 +147,28 @@ export const Navbar: FC = () => {
 
 
                   <div className="row justify-content-center align-items-end">
-                  <div className="flex flex-row w-fit">
-                    <Image alt="" className='md:w-full w-screen h-fit p-2' src="/1.png" width="170" height="170"></Image>
+
+                  <div className="w-1/2 h-fit m-2">
+                  <Slider {...settings}>
+              
+      <div className="flex flex-row">
+      <Image alt="" className='md:w-full w-1/2 h-fit p-2 boredr' src="/1.png" width="170" height="170"></Image>
+      </div>
+      <div>
+      <Image alt="" className='md:w-full w-screen h-fit p-2' src="/2.png" width="170" height="170"></Image>
+      </div>
+      <div>
+      <Image alt="" className='md:w-full w-screen h-fit p-2' src="/3.png" width="170" height="170"></Image>
+      </div>
+      <div>
+      <Image alt="" className='md:w-full w-screen h-fit p-2' src="/4.png" width="170" height="170"></Image>
+      </div>
+      <div>
+      <Image alt="" className='md:w-full w-screen h-fit p-2' src="/5.png" width="170" height="170"></Image>
+      </div>
+      {/* Add more slides as needed */}
+    </Slider>
+
                     </div>
                   
 
@@ -177,11 +225,21 @@ export const Navbar: FC = () => {
               <div className="md:flex flex-row hidden" />
 
               <ul className="md:flex flex-row border p-2 hidden bg-white w-fit">
-                            {PAGES.map((nav, index) => (
-                              <li key={index} className="nav-item">
-                                <Link href={nav.link} className="nav-link hover:text-blue-600">{nav.name}</Link>
+                            {/* {PAGES.map((nav, index) => (
+                              <li key={index}  className="nav-item">
+                                <button onMouseOver={mouseHover}><Link  href={nav.link} className="nav-link hover:text-blue-600">{nav.name}</Link></button>
                               </li>
-                            ))}
+                            ))} */}
+                            <div className="flex flex-row gap-4 justify-center items-center text-white mr-5">
+                              <a onMouseOver={mouseHover} className="bg-blue-600 p-2 hover:bg-red-500 font-medium hover:text-white rounded-md" href="">Home</a>
+                              <li className="bg-green-500">{currentlist}</li>
+                              <a className="bg-blue-600 p-2 hover:bg-red-500 font-medium hover:text-white rounded-md" href="">Company</a>
+                              <a className="bg-blue-600 p-2 hover:bg-red-500 font-medium hover:text-white rounded-md" href="">Products</a>
+                              <a className="bg-blue-600 p-2 hover:bg-red-500 font-medium hover:text-white rounded-md" href="">Services</a>
+                              <a className="bg-blue-600 p-2 hover:bg-red-500 font-medium hover:text-white rounded-md" href="">Solution</a>
+                              <a className="bg-blue-600 p-2 hover:bg-red-500 font-medium hover:text-white rounded-md" href="">Download</a>
+                              <a className="bg-blue-600 p-2 hover:bg-red-500 font-medium hover:text-white rounded-md" href="">Contact Us</a>
+                            </div>
                             <li className="nav-item-button">
                               <div className="d-flex" />
                               <div>

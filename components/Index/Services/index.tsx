@@ -45,12 +45,12 @@ export const Services: FC = () => {
 
   return (
     <div className="page-content">
-      <marquee behavior direction class="theme-bg marqueeData">
+      <Marquee behavior direction class="theme-bg marqueeData">
         <h1>
         Top Tally Solutions Dealers and Partners across New Delhi - Gurgaon - Noida - Faridabad - NCR | Tally
             Software Dealers and Solution Provides - Across New Delhi - NCR - Gurgaon - Noida
         </h1>
-      </marquee>
+      </Marquee>
     <section className="services theme-bg" style={{ backgroundColor: '#3143ef' }}>
       <div className="container ">
        <div className="row">
